@@ -88,7 +88,7 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-     this.cardElement.classList.toggle('flex');
+     this.cardElement.classList.toggle(display = "flex");
      console.log("flex");
   }
 
@@ -103,9 +103,9 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-const tabs = document.querySelector('.tab');
+const tabs = [document.querySelector('.tab')];
 
-tabs.forEach(function(tabs){
+tabs.forEach(function(tabElement){
   // console.log(tabs);
-  return new TabLink(tabs);
+  return new TabLink(tabElement);
 });
