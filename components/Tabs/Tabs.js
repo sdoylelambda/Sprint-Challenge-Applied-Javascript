@@ -33,11 +33,11 @@ class TabLink {
 
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach((tab) => {
-      tab.classList.remove('active-tab')
+      tab.classList.remove('active-tab');
   })
     // Add a class of ".active-tab" to this.element
    // this.element.classList.add('.active-tab');
-      this.tabs.classList.add('.active-tab');
+      this.tabElement.classList.add('.active-tab');
 
     // Select all of the elements with the .card class on them
      const cards = document.querySelectorAll('.card');
@@ -63,7 +63,8 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     // this.cardElement.classList.toggle(display = "flex");
-    this.cardElement.classList.toggle("flex");
+    // this.cardElement.classList.toggle(display = "flex");
+    this.cardElement.style.display = "flex";
   }
 }
 
