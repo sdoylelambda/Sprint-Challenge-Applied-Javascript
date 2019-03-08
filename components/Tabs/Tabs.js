@@ -5,7 +5,7 @@ class TabLink {
     console.log(tabElement);
     // Get the `data-tab` value from this.tabElement and store it here
      this.tabData = this.tabElement.querySelector('.data-tab'); 
-    // .data ??
+    // .data, ${[]} ??
 
 
 
@@ -13,7 +13,7 @@ class TabLink {
     
     
     // Check to see if this.tabData is equal to 'all'
-    if(this.tabData === 'all') {
+    if(this.tabData === this.cards) {
       // If `all` is true, select all cards regardless of their data attribute values
        this.cards = this.cards;
        console.log(cards);
@@ -27,7 +27,7 @@ class TabLink {
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards 
      // element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
      
-    this.cards = Array.from(this.cards).map;
+    this.cards = Array.from(this.cards).map();
     console.log(cards);
 
 
@@ -103,9 +103,9 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll('.tab');
+const tabs = document.querySelector('.tab');
 
 tabs.forEach(function(tabs){
-  console.log('print');
+  // console.log(tabs);
   return new TabLink(tabs);
 });
