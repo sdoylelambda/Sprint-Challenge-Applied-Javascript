@@ -4,22 +4,23 @@ class TabLink {
      this.tabElement = tabElement;
     console.log(tabElement);
     // Get the `data-tab` value from this.tabElement and store it here
-     this.tabData = this.tabElement.querySelector('.data-tab'); 
+     this.tabData = this.tabElement.dataset.tab;
+    // this.tabData = this.tabElement.querySelector('.data-tab'); 
     // .data, ${[]} ??
-
+    // .querySelector(`.content[data-tab='${this.link.dataset.tab}']`);
 
 
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     
     // Check to see if this.tabData is equal to 'all'
-    if(this.tabData === this.cards) {
+    if(this.tabData === 'all') {
       // If `all` is true, select all cards regardless of their data attribute values
-       this.cards = this.cards;
+       this.cards = document.querySelectorAll('.card');
        console.log(cards);
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-       this.cards = this.tabData;
+       document.querySelectorAll(`.card[data-tab=${this.tabData}`);
        console.log(this.tabData);
     }
     
@@ -27,7 +28,7 @@ class TabLink {
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards 
      // element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
      
-    this.cards = Array.from(this.cards).map();
+    this.cards = Array.from(this.cards).map((card) => new TabCard(card));
     console.log(cards);
 
 
@@ -45,13 +46,11 @@ class TabLink {
 
 
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(function(tab){
-      console.log(tabs);
-      console.log(tab);
-      return new TabLink(tab);
-      console.log(tab);
-      console.log(TabLink);
-    });
+    tabs.forEach((tab) => {
+      tab.classList.remove('active-tab')
+  })
+    // Add a class of ".active-tab" to this.element
+    this.element.classList.add('active-tab');
 
 
 
@@ -65,7 +64,6 @@ class TabLink {
      cards.forEach(function(card){
       console.log(cards);
        return new Card(card);
-       console.log(card);
      });
     
 
