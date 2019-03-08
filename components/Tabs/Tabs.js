@@ -61,10 +61,9 @@ class TabLink {
 
 
     // Iterate through the NodeList setting the display style each one to 'none'
-     cards.forEach(function(card){
-      console.log(cards);
-       return new Card(card);
-     });
+    cards.forEach((card) => {
+      card.style.display = 'none';
+  });
     
 
 
@@ -107,3 +106,7 @@ tabs.forEach(function(tabElement){
   // console.log(tabs);
   return new TabLink(tabElement);
 });
+
+// tabs = Array.from(tabs).map((tab) => {
+//   return new TabLink(tab);
+// });
