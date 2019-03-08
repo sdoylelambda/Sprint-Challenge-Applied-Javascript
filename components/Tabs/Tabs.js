@@ -12,16 +12,16 @@ class TabLink {
     // Check to see if this.tabData is equal to 'all'
     if(this.tabData === 'all') {
       // If `all` is true, select all cards regardless of their data attribute values
+      
        return this.cards = document.querySelectorAll('.card');
-       console.log(cards);
+       
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      // document.querySelectorAll(`.card[data-tab=${this.tabData}`);
+       return this.cards = document.querySelectorAll(`.card[data-tab=${this.tabData}`);
       //return document.querySelectorAll(`.card[data-tab="${data}"]`);
 
-
-      return this.cards = document.querySelectorAll('this.tabData');
-       console.log(this.tabData);
+     
+     // return this.cards = document.querySelectorAll('this.tabData');
     }
     
 
